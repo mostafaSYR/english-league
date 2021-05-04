@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <th>standing</th>
+    <th>team</th>
+    <th>played</th>
+    <th>won</th>
+    <th>lost</th>
+    <th>drawn</th>
+    <th>goals for</th>
+    <th>goals against</th>
+    <th>points</th>
+  </tr>
+  <% @teams.each do |t| %>
+    <tr style: "background-color: <%= if t.id == @id_of_team_to_be_highlighted then 'red' else 'grey' end %>">
+      <td> <%= t.standing %> </td>
+      <td> <%= t.name%> </td>
+      <td> <%= t.played%> </td>
+      <td> <%= t.won%> </td>
+      <td> <%= t.lost%> </td>
+      <td> <%= t.drawn%> </td>
+      <td> <%= t.goals_for%> </td>
+      <td> <%= t.goals_against%> </td>
+      <td> <%= t.points%> </td>
+    </tr>
+  <% end%>
+
+</table>
+<%= link_to "show raw file", result_raw_data_url %>
