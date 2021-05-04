@@ -1,19 +1,19 @@
-<table>
-  <tr>
-    <th>standing</th>
-    <th>team</th>
-    <th>played</th>
-    <th>won</th>
-    <th>lost</th>
-    <th>drawn</th>
-    <th>goals for</th>
-    <th>goals against</th>
-    <th>points</th>
+<table class= "table">
+  <tr class= "bg-secondary text-white" >
+    <th>Standing</th>
+    <th>Team</th>
+    <th>Played</th>
+    <th>Won</th>
+    <th>Lost</th>
+    <th>Draw</th>
+    <th>Goals for</th>
+    <th>Goals against</th>
+    <th>Points</th>
   </tr>
   <% @teams.each do |t| %>
-    <tr style: "background-color: <%= if t.id == @id_of_team_to_be_highlighted then 'red' else 'grey' end %>">
+    <tr class=" <%= if t.id == @id_of_team_to_be_highlighted then 'bg-danger' else '' end %>">
       <td> <%= t.standing %> </td>
-      <td> <%= t.name%> </td>
+      <td class="font-weight-bold"> <%= t.name%> </td>
       <td> <%= t.played%> </td>
       <td> <%= t.won%> </td>
       <td> <%= t.lost%> </td>
@@ -25,4 +25,4 @@
   <% end%>
 
 </table>
-<%= link_to "show raw file", result_raw_data_url %>
+<%= link_to "show raw file", result_raw_data_url , class: "float-right"%>

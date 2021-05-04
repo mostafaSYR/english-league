@@ -6,7 +6,7 @@ class ResultController < ApplicationController
   end
 
   def raw_data
-    render file: 'public/football.dat'
+    render file: Rails.root.join('public/football.dat')
   end
   
   private
